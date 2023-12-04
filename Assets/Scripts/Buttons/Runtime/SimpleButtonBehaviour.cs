@@ -1,11 +1,14 @@
-using Events.Runtime.Channels;
-using Events.Runtime.Channels.Helpers;
 using UnityEngine;
 
-namespace Menus.Runtime
+using Events.Runtime.Channels;
+using Events.Runtime.Channels.Helpers;
+
+namespace Buttons.Runtime
 {
     public class SimpleButtonBehaviour : ButtonBehaviour
     {
+        [Header("OnClick event")]
+        [SerializeField] protected VoidChannelSo onClickChannel;
         /// <summary>
         /// Setups this button behaviour. Meant for runtime instancing
         /// </summary>
@@ -13,7 +16,7 @@ namespace Menus.Runtime
         /// <param name="clickChannel"></param>
         public virtual void Setup(string title, VoidChannelSo clickChannel)
         {
-            SetTitle(title);
+            SetContent(title);
             onClickChannel = clickChannel;
         }
 

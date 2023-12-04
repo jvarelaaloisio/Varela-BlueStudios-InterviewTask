@@ -251,12 +251,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fba140c4e53844ea951cbf2100df40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu:
-    scene: {fileID: 102900000, guid: 0bf53aae9bbc9af4fa49963f7aafbeb8, type: 3}
-    sceneName: 
-  world:
-    scene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-    sceneName: Outside
-  shop:
-    scene: {fileID: 0}
-    sceneName: 
+  sceneNavigator: {fileID: 1997016248}
+  mainMenu: {fileID: 11400000, guid: c7426c5a6031c3a43ada8e0827a0711e, type: 2}
+  quitChannel: {fileID: 11400000, guid: 2938a5786bab6304dab204b3d592e279, type: 2}
+  goToScene: {fileID: 11400000, guid: 77ced14bc1b58884ea101dd1c2734641, type: 2}
+--- !u!1 &1997016246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1997016247}
+  - component: {fileID: 1997016248}
+  m_Layer: 0
+  m_Name: SceneNavigator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1997016247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997016246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1997016248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997016246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf394ef3a54f5146863bf77d9e3e805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - scene: {fileID: 102900000, guid: 9fd337c8c8943e3469d2536e4e4d5b05, type: 3}
+    <SceneName>k__BackingField: Menu
+    <ID>k__BackingField: {fileID: 11400000, guid: c7426c5a6031c3a43ada8e0827a0711e, type: 2}
+  - scene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    <SceneName>k__BackingField: Outside
+    <ID>k__BackingField: {fileID: 11400000, guid: 25d3cffb5408e4e42bd3b28265fab959, type: 2}
+  - scene: {fileID: 102900000, guid: c2acfcde401ae144eac885edea9a8b21, type: 3}
+    <SceneName>k__BackingField: Credits
+    <ID>k__BackingField: {fileID: 11400000, guid: a21c0855d9fe5d8429a1214995f7d637, type: 2}
+  sceneNavigationChannel: {fileID: 11400000, guid: d45ac30911e25a74bb7f3535e896da1d, type: 2}

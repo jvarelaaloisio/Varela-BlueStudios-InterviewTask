@@ -7,7 +7,7 @@ namespace Characters.Visuals
     public class CharacterAnimatorController : MonoBehaviour
     {
         [Header("Setup")]
-        [SerializeField] private Rigidbody2D rigidbody2D;
+        [SerializeField] private new Rigidbody2D rigidbody2D;
         [SerializeField] private Animator animator;
         
         [Header("Animator parameters")]

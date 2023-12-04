@@ -4,7 +4,7 @@ namespace Characters.Visuals
 {
     public class CharacterView : MonoBehaviour
     {
-        [SerializeField] private Rigidbody2D rigidbody2D;
+        [SerializeField] private new Rigidbody2D rigidbody2D;
         
         private void Update()
         {

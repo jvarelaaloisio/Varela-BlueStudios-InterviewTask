@@ -1,6 +1,6 @@
 using EventChannels.Runtime.Additions.Ids;
 
-namespace Menus.Runtime
+namespace Buttons.Runtime
 {
     public class IdButtonBehaviour : DataButtonBehaviour<Id> { }
 }

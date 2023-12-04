@@ -1,9 +1,10 @@
 {
-    "name": "VarelaAloisio.Menus.Runtime",
+    "name": "VarelaAloisio.Buttons.Runtime",
     "rootNamespace": "",
     "references": [
         "GUID:bf7f22e8876e18f4894b9e6762891c1f",
-        "GUID:ce4ae6fe238879f448b9987d3c1b8c52"
+        "GUID:ce4ae6fe238879f448b9987d3c1b8c52",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

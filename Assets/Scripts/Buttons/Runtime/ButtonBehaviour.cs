@@ -1,12 +1,8 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-using TMPro;
-
-using Events.Runtime.Channels;
-using Events.Runtime.Channels.Helpers;
-
-namespace Menus.Runtime
+namespace Buttons.Runtime
 {
     [RequireComponent(typeof(Button))]
     public abstract class ButtonBehaviour : MonoBehaviour
@@ -14,9 +10,6 @@ namespace Menus.Runtime
         [Header("Setup")]
         [SerializeField] protected Button button;
         [SerializeField] protected TMP_Text text;
-        
-        [Header("OnClick event")]
-        [SerializeField] protected VoidChannelSo onClickChannel;
         
         [Header("Config")]
         [SerializeField] protected string namePrefix = "btn_";
@@ -46,19 +39,16 @@ namespace Menus.Runtime
         /// <summary>
         /// Changes name and Text for button
         /// </summary>
-        /// <param name="title"></param>
-        public virtual void SetTitle(string title)
+        /// <param name="content"></param>
+        public virtual void SetContent(string content)
         {
-            if (text) text.text = title;
-            name = namePrefix + title;
+            if (text) text.text = content;
+            name = namePrefix + content;
         }
 
         /// <summary>
         /// Handles the click event on the button component
         /// </summary>
-        protected virtual void HandleClick()
-        {
-            onClickChannel.TryRaiseEvent();
-        }
+        protected abstract void HandleClick();
     }
 }
