@@ -1,0 +1,30 @@
+using UnityEngine;
+using UnityEditor;
+
+    #ROOTNAMESPACEBEGIN#
+public class #SCRIPTNAME# : EditorWindow
+{
+    private const string WindowTitle = "#SCRIPTNAME#";
+    #NOTRIM#
+    [MenuItem("Tools/" + WindowTitle)]
+    [MenuItem("Assets/" + WindowTitle)]
+    private static void OpenWindow()
+    {
+        var window = GetWindow<#SCRIPTNAME#>();
+        window.titleContent = new GUIContent(WindowTitle);
+        window.Show();
+    }
+    #NOTRIM#
+    [MenuItem("Tools/" + WindowTitle, true)]
+    [MenuItem("Assets/" + WindowTitle, true)]
+    private static bool OpenWindow_Validate()
+    {
+        return true;
+    }
+    #NOTRIM#
+    private void OnGUI()
+    {
+        #NOTRIM#
+    }
+}
+#ROOTNAMESPACEEND#
