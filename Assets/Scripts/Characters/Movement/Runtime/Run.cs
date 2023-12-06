@@ -7,8 +7,9 @@ namespace Characters.Movement
     [RequireComponent(typeof(Rigidbody2D))]
     public class Run : MonoBehaviour
     {
+        private const float DeltaTimeForceScaleCompensation = 1000;
+        
         [SerializeField] private Config config = new(2000, new Vector2(10, 10));
-
 
         private Rigidbody2D _rigidbody;
         private Vector2 _scaledDirection;
@@ -27,13 +28,13 @@ namespace Characters.Movement
             while (enabled)
             {
                 yield return new WaitForFixedUpdate();
-                var force = _scaledDirection * (config.movementForce * Time.fixedDeltaTime);
+                var force = _scaledDirection * (config.movementForce * Time.fixedDeltaTime * DeltaTimeForceScaleCompensation);
                 if (force.magnitude == 0)
                     continue;
-                force.x *= config.targetVelocity.x - Mathf.Abs(_rigidbody.velocity.x);
-                // if (force.x > 0 && _rigidbody.velocity.x >= config.targetVelocity.x
-                //     || force.x < 0 && _rigidbody.velocity.x <= -config.targetVelocity.x)
-                //     force.x = 0;
+                // force.x *= config.targetVelocity.x - Mathf.Abs(_rigidbody.velocity.x);
+                if (force.x > 0 && _rigidbody.velocity.x >= config.targetVelocity.x
+                    || force.x < 0 && _rigidbody.velocity.x <= -config.targetVelocity.x)
+                    force.x = 0;
                 if (force.y > 0 && _rigidbody.velocity.y >= config.targetVelocity.y
                     || force.y < 0 && _rigidbody.velocity.y <= -config.targetVelocity.y)
                     force.y = 0;
